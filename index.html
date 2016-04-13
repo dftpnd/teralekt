@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>teralekt</title>
+</head>
+<body>
+<form action="" onsubmit="textTransform.handle(event);">
+    <fieldset>
+        <legend>Введите значение PartSize</legend>
+        <input id="part-size" type="number" required min="1" value="20">
+    </fieldset>
+    <fieldset>
+        <legend>Введите текст</legend>
+        <textarea id="text-container" cols="30" rows="10" required>A journey of a thousand miles begins with one step</textarea>
+    </fieldset>
+    <button type="submit">Обработать</button>
+</form>
+<div id="log-container"></div>
+<script async src="script.js"></script>
+</body>
+</html>
