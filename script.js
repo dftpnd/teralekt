@@ -15,9 +15,18 @@
 		var separator = '\\';
 
 		while (textLength >= 0) {
-			var row = text.splice(0, this.partSizeElem.value);
-			res.push('[' + part + separator + partCount + '] ' + row.join(''));
-			textLength -= this.partSizeElem.value;
+			var prefix = '[' + part + separator + partCount + '] ';
+			var partSize = this.partSizeElem.value - prefix.length;
+
+			if(partSize < 0){
+				console.error('part не может быть меньше префикса');
+				return;
+			}
+
+			var row = text.splice(0, partSize);
+
+			res.push( prefix + row.join(''));
+			textLength -= partSize;
 			++part;
 		}
 		return res;
